@@ -93,6 +93,7 @@ public class TelaOperacoes {
         valOper.getChildren().add(tfValorOperacao);
         grid.add(valOper, 1, 1);        
 
+		Button btnEstatistica = new Button ("Estatistica");
         Button btnCredito = new Button("Credito");
         Button btnDebito = new Button("Debito");
         Button btnVoltar = new Button("Voltar");
@@ -170,7 +171,9 @@ public class TelaOperacoes {
 
         btnVoltar.setOnAction(e->{
         	mainStage.setScene(cenaEntrada);
-        });
+		});
+		
+		
 		
         cenaOperacoes = new Scene(grid);
         return cenaOperacoes;
