@@ -13,22 +13,23 @@ import java.util.Locale;
 import java.util.Map;
 import java.util.Scanner;
 
-private Persistencia () {
-
-}
-
-public static synchronized Persistencia getInstance() {
-    if (uniqueInstance == null)
-        uniqueInstance = new Persistencia();
-
-    return uniqueInstance;
-}
-
-
 public class Persistencia {
     private final String NomeBDContas = "BDContasBNG.txt";
     private final String NomeBDOperacoes = "BDOperBNG.txt";
+    // Singleton:
+    private static Persistencia uniqueInstance = null;
+
+    private Persistencia () {
     
+    }    
+
+    public static Persistencia getInstance() {
+        if (uniqueInstance == null)
+            uniqueInstance = new Persistencia();
+
+        return uniqueInstance;
+    }
+       
     public Map<Integer,Conta> loadContas(){
     	Map<Integer,Conta> contas = new HashMap<>();
     	
